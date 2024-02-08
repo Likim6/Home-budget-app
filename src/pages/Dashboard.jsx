@@ -106,21 +106,11 @@ const Dashboard = () => {
                     <BudgetItem key={budget.id} budget={budget} />
                   ))}
                 </div>
-                {expenses && expenses.length > 0 && (
-                  <div className="grid-md">
-                    <h2>Recent Expenses</h2>
-                    <Table
-                      expenses={expenses
-                        .sort((a, b) => b.createdAt - a.createdAt)
-                        .slice(0, 8)}
-                    />
-                    {expenses.length > 8 && (
-                      <Link to="expenses" className="btn btn--dark">
-                        View all expenses
-                      </Link>
-                    )}
-                  </div>
-                )}
+                <h2>Recent Expenses</h2>
+                <Table expenses={expenses} />
+                <Link to="expenses" className="btn btn--dark">
+                  View all expenses
+                </Link>
               </div>
             ) : (
               <div className="grid-sm">
